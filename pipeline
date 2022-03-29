@@ -1,0 +1,9 @@
+node {
+    
+    stage ('cloning code') {
+        git branch: 'main', url: 'https://github.com/sunilreddyj6/demo1-free-.git'
+    }
+    stage ('listing file') {
+        bat '''dir '''
+    }
+}

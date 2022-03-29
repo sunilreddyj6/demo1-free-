@@ -4,8 +4,8 @@ from pyspark.sql.window import Window
 
 
 spark = SparkSession.builder.appName("spark").getOrCreate()
-dfVaccinations = spark.read.csv('../../data/vaccination-data.csv', header=True)
-dfPopulation = spark.read.csv('../../data/population-data.csv', header=True)
+dfVaccinations = spark.read.csv('vaccination-data.csv', header=True)
+dfPopulation = spark.read.csv('population-data.csv', header=True)
 dfJoined = dfVaccinations.join(
     dfPopulation, dfVaccinations["ISO3"] == dfPopulation["Country Code"])
 
